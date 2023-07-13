@@ -1,0 +1,49 @@
+From faa4736ecb545c0ae126a27942ef5aaa66b83dff Mon Sep 17 00:00:00 2001
+From: Yashasvi Trivedi <yashashvitrivedi6569224@gmail.com>
+Date: Thu, 13 Jul 2023 23:08:53 +0530
+Subject: [PATCH] Graph Updated
+
+---
+ src/App.tsx   |  3 ++-
+ src/Graph.tsx | 10 +++-------
+ 2 files changed, 5 insertions(+), 8 deletions(-)
+
+diff --git a/src/App.tsx b/src/App.tsx
+index d2576e0..4790095 100755
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -53,7 +53,8 @@ class App extends Component<{}, IState> {
+     x++;
+     if(x>1000){
+       clearInterval(interval);
+-    } , 100) ;
++      }
++    }, 100) ;
+   }
+ 
+   /**
+diff --git a/src/Graph.tsx b/src/Graph.tsx
+index aacb40e..362608d 100644
+--- a/src/Graph.tsx
++++ b/src/Graph.tsx
+@@ -50,14 +50,10 @@ class Graph extends Component<IProps, {}> {
+       // Add more Perspective configurations here.
+       elem.load(this.table);
+       elem.setAttribute('view', 'y_line');
+-      elem.setAttribute('column_pivots', '["stock]');
+-      elem.setAttribute('row_pivots', '["timestamp]');
++      elem.setAttribute('column_pivots', '["stock"]');
++      elem.setAttribute('row_pivots', '["timestamp"]');
+       elem.setAttribute('columns','["top_ask_price"]');
+-      elem.setAttribute('aggregates',
+-       {"stock":"distinct count",
+-        "top_ask_price": "avg",
+-        "top_bid_price": "avg",
+-        "timestamp":"distinct count"} );
++      elem.setAttribute('aggregates', '{"stock":"distinct count", "top_ask_price": "avg","top_bid_price": "avg" ,"timestamp":"distinct count"}' );
+     }
+   }
+ 
+-- 
+2.38.1.windows.1
+
